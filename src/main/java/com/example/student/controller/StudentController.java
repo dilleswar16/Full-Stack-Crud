@@ -23,13 +23,13 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 	
-	@RequestMapping("/")
-	public ModelAndView hello() {
-		return new ModelAndView("home");
-		}
+//	@RequestMapping("/")
+//	public ModelAndView hello() {
+//		return new ModelAndView("home");
+//		}
 	
 	//display all students in DB
-	@GetMapping("/allStudents")
+	@GetMapping({"/","/allStudents"})
 	public String getAllStudents(Model model) {
 		model.addAttribute("listStudents", studentService.getAllStudents());
 		return "home";
